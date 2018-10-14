@@ -18,8 +18,9 @@ RUN buildDeps='software-properties-common'; \
     apt-get install -y oracle-java8-set-default && \
     
     # clean up
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-    apt-get purge -y --auto-remove $buildDeps && \
-    apt-get autoremove -y && apt-get clean
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    && apt-get purge -y --auto-remove $buildDeps \
+    && apt-get autoremove -y \
+    && apt-get clean
 
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
