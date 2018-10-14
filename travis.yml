@@ -1,0 +1,10 @@
+sudo: required
+
+services:
+- docker
+
+script:
+- docker build -t tairoroberto/java .
+- docker run -d tairoroberto/java
+- docker ps -a
+- docker run tairoroberto/java /bin/sh -c "java -version"
